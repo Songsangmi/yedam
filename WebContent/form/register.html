@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form/register</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <td>
+                <a href="../index.html"><h2>&lt;</h2></a>
+            </td>
+            <td></td>
+            <td colspan="2" >
+                <h3>회원가입</h3>
+            </td>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="4"><hr></td>
+            </tr>
+            <tr>
+                <td style>아이디</td>
+                <td colspan="2"><input type="text" name="uid"></td>
+                <td><button type="button">중복확인</button></td>
+            </tr>
+            <tr>
+                <td>비밀번호</td>
+                <td colspan="3"><input type="text" name="upw"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="3"><input type="text" name="upw2" value="비밀번호 재확인"></td>
+            </tr>
+            <tr>
+                <td>이름</td>
+                <td colspan="3"><input type="text" name="uname"></td>
+            </tr>
+            <tr>
+                <td>주소</td>
+                <td><input type="text" name="postnum1"> -</td>
+                <td><input type="text" name="postnum2"></td>
+                <td><button type="button">우편번호</button></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="3"><input type="text" name="address1"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="3"><input type="text" name="address2"></td>
+            </tr>
+            <tr>
+                <td>휴대전화</td>
+                <td>
+                    <select name="phone1" id="phone1" style="width: 95%;">
+                        <option value="010">010</option>
+                        <option value="011">011</option>
+                        <option value="012">012</option>
+                        <option value="017">017</option>
+                    </select>
+                </td>
+                <td><input type="text" name="phone2"></td>
+                <td><input type="text" name="phone3"></td>
+            </tr>
+            <tr>
+                <td>전화번호</td>
+                <td>
+                    <select name="tel1" id="tel1" style="width: 95%;">
+                        <option value="010">010</option>
+                        <option value="02">02</option>
+                        <option value="031">031</option>
+                        <option value="051">051</option>
+                        <option value="053">053</option>
+                    </select>
+                </td>
+                <td><input type="text" name="tel2"></td>
+                <td><input type="text" name="tel3"></td>
+            </tr>
+            <tr>
+                <td>이메일</td>
+                <td><input type="text" name="email1"></td>
+                <td>
+                    <select name="email2" id="email2" style="width: 95%;">
+                        <option value="naver">@naver.com</option>
+                        <option value="daum">@daum.net</option>
+                        <option value="nate">@nate.com</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>생년월일</td>
+                <td>
+                    <input type="radio" name="birth" value="양" id="yang">
+                    <label for="yang">양</label>
+                </td>
+                <td>
+                    <input type="radio" name="birth" value="음" id="um">
+                    <label for="um">음</label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                        <select name="bt_year" id="bt_year" style="width: 95%;">
+                            <option value="2021">2021</option>
+                            <option value="2020">2020</option>
+                            <option value="2019">2019</option>
+                        </select>
+                    </td>
+                <td>
+                        <select name="bt_month" id="bt_month" style="width: 95%;">
+                            <option value="09">09</option>
+                            <option value="08">08</option>
+                            <option value="07">07</option>
+                        </select>
+                </td>
+                    <td>
+                        <select name="bt_day" id="bt_day" style="width: 95%;">
+                            <option value="30">30</option>
+                            <option value="29">29</option>
+                            <option value="27">27</option>
+                        </select>
+                 </td>
+            </tr>
+            <tr>
+                <td colspan="4"><hr></td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <input type="checkbox" name="agree" id="agr_email">
+                    <label for="agr_email">**님의 이메일을 수신합니다.</label>
+                </td>
+            </tr>
+          
+            <tr>
+                <td colspan="4">
+                    <input type="checkbox" name="agree" id="agr_sms">
+                    <label for="agr_sms">**님의 SMS를 수신합니다.</label>
+                </td>            
+            </tr>
+            <tr>
+                <td colspan="2"><input type = "reset" value="가입취소" style="width: 95%; background-color: gray;"></td>
+                <td colspan="2"><input type = "submit" value="회원가입" style="width: 95%; background-color: red"></td>
+            </tr>
+        
+        </tbody>
+    </table>
+</body>
+</html>
