@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css/semantic.html</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            text-align: center;
+        }
+        div {
+            border: 2px dotted gray;
+            width: 100%;
+        }
+        header, nav, section, aside, footer {
+            border-radius: 3px;
+            border: 1px solid gray;
+            margin: 3px;
+        }
+        header.outer {
+            background-color: #FFE5A0;
+            height: 50px;
+            padding-top: 10px;
+        }
+        nav, section, aside {
+            float: left;
+            height: 430px;
+        }
+        nav {
+            background-color: #88E200;
+            width: 20%;
+        }
+        section{
+            background-color: #88E200;
+            width: 58%;
+        }
+        section > header, article, footer {
+            border-radius: 3px;
+            background-color: greenyellow;
+            border: 1px solid gray;     
+            width: 99%;
+            margin: 3px;
+        }
+        article {
+            height: 250px;
+            text-align: center;
+            padding-top: 100px;
+        }
+        aside {
+            background-color: #88E200;  
+            width: 20%;
+        }
+        footer.outer {
+            clear: both;
+            background-color: #F9D13E;
+            height: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <header class="outer">&lt;header&gt;</header>
+        <nav>
+            <p>&lt;nav&gt;</p>
+        </nav>
+        <section>
+            <p>&lt;section&gt;</p>
+            <header class="inner">
+                <p>&lt;header&gt;</p>
+            </header>
+            <article>
+                <p>&lt;article&gt;</p>
+            </article>
+            <footer class="inner">
+                <p>&lt;footer&gt;</p>
+            </footer>
+        </section>
+        <aside>
+            <p>&lt;aside&gt;</p>
+        </aside>
+        <footer class="outer">
+            <p>&lt;footer&gt;</p>
+        </footer>
+    </div>
+</body>
+</html>
