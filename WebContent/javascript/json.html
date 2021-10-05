@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript/json.html</title>
+    <style>
+        *{
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        let jsonDate = `{
+            "employees":[{
+                "firstName":"John", 
+                 "lastName":"Doe"},
+
+             {
+                "firstName":"Anna", 
+                "lastName":"Smith"
+             },
+
+            {
+                "firstName":"Peter",
+                "lastName":"Jones"
+            }
+        ]
+    }`;
+
+        function clickFnc(e){
+            let btn = e.target;
+            console.log(btn.parentNode.remove()); //botton의 부모태그 li 삭제 
+        }
+
+        function mOver(e){
+            e.target.style.backgroundColor='yellow';
+        }
+
+        function mOut(e){
+            e.target.style.backgroundColor = "";
+        }
+        
+
+        let obj = JSON.parse(jsonDate);
+        const employees = obj.employees;
+
+        document.write('<ul>');
+
+        employees.forEach(function (obj, idx, ary) {
+            document.write('<li onmouseout="mOut(event)" onmouseover="mOver(event)">' + obj.firstName + '-' + obj.lastName + 
+                '<button onclick="clickFnc(event)">삭제</button>'+'</li>' )
+        });
+
+        document.write('</ul>');
+
+
+        //console.log(obj);
+        // console.log(obj.employess[0].firstName);
+    </script>
+</body>
+
+</html>

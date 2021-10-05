@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript/json_empl.html</title>
+</head>
+
+<body>
+    <script>
+        let rawData = `[{
+                "id": 1,
+                "first_name": "Trescha",
+                "last_name": "Addie",
+                "email": "taddiea@slideshare.net",
+                "gender": "Polygender",
+                "ip_address": "41.105.114.162"
+            },
+            {
+                "id": 2,
+                "first_name": "Rosa",
+                "last_name": "Heinritz",
+                "email": "rheinritz1@symantec.com",
+                "gender": "Bigender",
+                "ip_address": "22.86.190.179"
+            },
+            {
+                "id": 3,
+                "first_name": "Teena",
+                "last_name": "Roddick",
+                "email": "troddick0@photobucket.com",
+                "gender": "Polygender",
+                "ip_address": "98.108.79.169"
+            },
+            {
+                "id": 4,
+                "first_name": "Jewelle",
+                "last_name": "Baudinot",
+                "email": "jbaudinot2@skype.com",
+                "gender": "Polygender",
+                "ip_address": "13.235.92.170"
+            },
+            {
+                "id": 5,
+                "first_name": "Valentin",
+                "last_name": "Newham",
+                "email": "vnewham4@cloudflare.com",
+                "gender": "Agender",
+                "ip_address": "117.205.100.183"
+            },
+            {
+                "id": 6,
+                "first_name": "Bernardine",
+                "last_name": "Soppit",
+                "email": "bsoppit5@biblegateway.com",
+                "gender": "Genderqueer",
+                "ip_address": "30.128.196.31"
+            },
+            {
+                "id": 7,
+                "first_name": "Madalyn",
+                "last_name": "Christon",
+                "email": "mchriston3@digg.com",
+                "gender": "Non-binary",
+                "ip_address": "128.189.139.228"
+            },
+            {
+                "id": 8,
+                "first_name": "Rebeca",
+                "last_name": "McGillivray",
+                "email": "rmcgillivray9@mapquest.com",
+                "gender": "Non-binary",
+                "ip_address": "204.218.195.68"
+            },
+            {
+                "id": 9,
+                "first_name": "Bordy",
+                "last_name": "Merck",
+                "email": "bmerck6@phoca.cz",
+                "gender": "Agender",
+                "ip_address": "113.59.175.27"
+            },
+            {
+                "id": 10,
+                "first_name": "Kale",
+                "last_name": "Pomfrett",
+                "email": "kpomfrettb@weather.com",
+                "gender": "Male",
+                "ip_address": "251.232.62.66"
+            },
+            {
+                "id": 11,
+                "first_name": "Franciska",
+                "last_name": "Thurber",
+                "email": "fthurber7@spotify.com",
+                "gender": "Non-binary",
+                "ip_address": "244.238.221.251"
+            },
+            {
+                "id": 12,
+                "first_name": "Christie",
+                "last_name": "Detoile",
+                "email": "cdetoilee@amazon.co.jp",
+                "gender": "Agender",
+                "ip_address": "7.127.12.149"
+            },
+            {
+                "id": 13,
+                "first_name": "Micky",
+                "last_name": "Le Strange",
+                "email": "mlestrangec@vimeo.com",
+                "gender": "Genderqueer",
+                "ip_address": "8.17.86.87"
+            },
+            {
+                "id": 14,
+                "first_name": "Nathaniel",
+                "last_name": "Ascough",
+                "email": "nascough8@odnoklassniki.ru",
+                "gender": "Polygender",
+                "ip_address": "226.57.8.76"
+            },
+            {
+                "id": 15,
+                "first_name": "Bobbie",
+                "last_name": "Kitter",
+                "email": "bkitterd@disqus.com",
+                "gender": "Male",
+                "ip_address": "108.73.173.221"
+            }
+        ]`;
+
+        // rawData => object
+        // console.log(data[0].id);
+        // console.log(data[0].first_name);
+        // console.log(data[0].last_name);
+        // console.log(data[0].email);
+        // console.log(data[0].gender);
+        // console.log(data[0].ip_address);
+
+        let obj = JSON.parse(rawData);
+        const employees = obj;
+
+        document.write('<table border="1">');
+        document.write('<tr>');
+        document.write('<th colspan ="6">사원리스트</th></tr>');
+
+        employees.forEach(function (obj, idx, ary) {
+            document.write('<tr>');
+            document.write('<td>' + obj.id + '</td>')
+            document.write('<td>' + obj.first_name + '</td>')
+            document.write('<td>' + obj.last_name + '</td>')
+            document.write('<td>' + obj.email + '</td>')
+            document.write('<td>' + obj.gender + '</td>')
+            document.write('<td>' + obj.ip_address + '</td>')
+            document.write('</tr>');
+        });
+
+        document.write('</table>');
+    </script>
+
+</body>
+
+</html>

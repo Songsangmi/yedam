@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript/event.html</title>
+</head>
+
+<body>
+    <button onclick="clickFuns()">Click</button>
+    <p>here</p>
+    <button>Click2</button>
+    <!-- <h1>안녕하세요.</h1> -->
+    <Script>
+        //태그 -> element 
+        function clickFuns(){
+            // window/alert('클릭되었습니다')
+        let h1 = document.createElement('h1');
+        h1.innerHTML = '안녕하세요.'
+        let buttons = document.getElementsByTagName('button');
+        buttons[0].after(h1);
+
+        buttons[0].innerHTML = '클릭';
+        buttons[0].style.backgroundColor = 'blue'
+            }
+
+        function clickFuns2(){
+            // let pTag = document.getElementsByTagName('p');
+            // pTag[0].innerHTML ='여기';
+            let buttons = document.getElementsByTagName('p');
+            buttons[0].innerHTML = '여기';
+        }
+
+
+    </Script>
+</body>
+
+</html>
