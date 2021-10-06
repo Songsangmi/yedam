@@ -1,15 +1,43 @@
 package co.yedam.common;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class EmpDAO extends DAO {
+
+	public List<Employee> getEmpList() {
+		connect();
+		List<Employee> list = new ArrayList<>();
+
+		String sql = "select * from empl_demo order by 1";
+		try {
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
+			while (rs.next()) {
+				Employee emp = new Employee();
+				emp.setEmployeeId(rs.getInt("employee_id"));
+				emp.setLastName(rs.getString("last_name"));
+				emp.setEmail(rs.getString("email"));
+				emp.setHireDate(rs.getString("hire_date"));
+				emp.setJobId(rs.getString("job_id"));
+
+				list.add(emp);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			disconnect();
+		}
+		return list;
+	}
 
 	public boolean insertEmp(Employee emp) {
 		connect();
 		String sql = "insert into empl_demo (employee_id, last_name, email, job_id, hire_date)\r\n"
 				+ "values(?, ?, ?, ?, ?)";
 		try {
-			psmt=conn.prepareStatement(sql);
+			psmt = conn.prepareStatement(sql);
 			psmt.setInt(1, emp.getEmployeeId());
 			psmt.setString(2, emp.getLastName());
 			psmt.setString(3, emp.getEmail());
@@ -25,7 +53,7 @@ public class EmpDAO extends DAO {
 			disconnect();
 		}
 	}
-	
+
 	public void updateEmp(String id, String phone, String salary) {
 		connect();
 		String sql = "update empl_demo set phone_number=?, salary=? where employee_id=?";
