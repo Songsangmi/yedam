@@ -33,7 +33,7 @@ public class AddEmpServlet extends HttpServlet {
 		String hire = request.getParameter("hire");
 		String job = request.getParameter("job");
 
-		System.out.println("id: " + id + ", name: " + name + ", email: " + email + ", hire: " + hire + ", job: " + job);
+		System.out.println("id: " + id + ",name: " + name + ",email: " + email + ",hire: " + hire + ",job: " + job);
 
 		Employee emp = new Employee();
 		emp.setEmployeeId(Integer.parseInt(id));

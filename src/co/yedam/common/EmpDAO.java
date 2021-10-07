@@ -10,7 +10,7 @@ public class EmpDAO extends DAO {
 		connect();
 		List<Employee> list = new ArrayList<>();
 
-		String sql = "select * from empl_demo order by 1";
+		String sql = "select * from employees order by 1 desc";
 		try {
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
@@ -34,7 +34,7 @@ public class EmpDAO extends DAO {
 
 	public boolean insertEmp(Employee emp) {
 		connect();
-		String sql = "insert into empl_demo (employee_id, last_name, email, job_id, hire_date)\r\n"
+		String sql = "insert into employees (employee_id, last_name, email, job_id, hire_date)\r\n"
 				+ "values(?, ?, ?, ?, ?)";
 		try {
 			psmt = conn.prepareStatement(sql);
@@ -56,7 +56,7 @@ public class EmpDAO extends DAO {
 
 	public void updateEmp(String id, String phone, String salary) {
 		connect();
-		String sql = "update empl_demo set phone_number=?, salary=? where employee_id=?";
+		String sql = "update employees set phone_number=?, salary=? where employee_id=?";
 		try {
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, phone);
@@ -73,7 +73,7 @@ public class EmpDAO extends DAO {
 
 	public void deleteEmp(int empId) {
 		connect(); // conn = dbconnection.Connection
-		String sql = "delete from empl_demo where employee_id = " + empId;
+		String sql = "delete from employees where employee_id = " + empId;
 		try {
 			stmt = conn.createStatement(); // Employee emp = new Employee();
 			int r = stmt.executeUpdate(sql);
@@ -85,4 +85,20 @@ public class EmpDAO extends DAO {
 		}
 	}
 
+	public int deleteEmployee(int empId) {
+		connect(); // conn = dbconnection.Connection
+		String sql = "delete from employees where employee_id = " + empId;
+		try {
+			stmt = conn.createStatement(); // Employee emp = new Employee();
+			int r = stmt.executeUpdate(sql);
+			System.out.println(r + "건 삭제됨.");
+			return empId;
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			disconnect();
+		}
+		return -1;
+	}
 }

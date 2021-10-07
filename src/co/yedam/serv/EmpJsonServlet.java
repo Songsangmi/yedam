@@ -40,7 +40,7 @@ public class EmpJsonServlet extends HttpServlet {
 			// , 마지막 건
 			cnt++;
 			if (cnt != lastCnt) {
-				out.print(", ");
+				out.println(",");
 			}
 		}
 		out.println("]");

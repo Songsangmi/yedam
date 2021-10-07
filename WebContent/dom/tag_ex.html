@@ -9,8 +9,7 @@
 </head>
 
 <body>
-    
-    <form action = "post.jsp" name="frm">
+    <!-- <form action = "post.jsp" name="frm">
         <label for="emp">아이디</label>
         <input type="text" name="emp" id="emp">
         <label for="name">이름</label>
@@ -41,11 +40,131 @@
                 <td>010-3333-5543</td>
             </tr>
         </tbody>
-    </table>
+    </table> -->
 
      <script>
     // body 형식대로 만들기
-    
+      let form = document.createElement('form');
+        form.action = 'post.jsp';
+        form.name = 'frm';
+
+        let labelId = document.createElement('label');
+        labelId.setAttribute('for', 'emp');
+        let textId = document.createTextNode('아이디:');
+        labelId.appendChild(textId);
+
+        let inputId = document.createElement('input');
+        inputId.setAttribute('type', 'text');
+        inputId.setAttribute('name', 'emp');
+        inputId.setAttribute('id', 'emp');
+
+        let labelName = document.createElement('label');
+        labelName.setAttribute('for', 'name');
+        let textName = document.createTextNode('이름:');
+        labelName.appendChild(textName);
+
+        let inputName = document.createElement('input');
+        inputName.setAttribute('type', 'text');
+        inputName.setAttribute('name', 'name');
+        inputName.setAttribute('id', 'name');
+
+        let inputSub = document.createElement('input');
+        inputSub.setAttribute('type', 'submit');
+        inputSub.setAttribute('value', '전송');
+
+        form.appendChild(labelId);
+        form.appendChild(inputId);
+        form.appendChild(labelName);
+        form.appendChild(inputName);
+        form.appendChild(inputSub);
+        document.getElementsByTagName('body')[0].appendChild(form);
+
+        //table 생성
+        let table, thead, tbody, tr1, td1, td2, td3, td4,textGender, textCall;
+        table = document.createElement('table');
+        table.setAttribute('border', '1');
+
+        thead = document.createElement('thead');
+
+        tr1 = document.createElement('tr');
+        
+        th1 = document.createElement('th');
+        th2 = document.createElement('th');
+        th3 = document.createElement('th');
+        th4 = document.createElement('th');
+        
+        textId = document.createTextNode('아이디');
+        textName = document.createTextNode('이름');
+        textGender = document.createTextNode('성별');
+        textCall = document.createTextNode('연락처');
+
+        th1.appendChild(textId);
+        th2.appendChild(textName);
+        th3.appendChild(textGender);
+        th4.appendChild(textCall);
+
+        tr1.appendChild(th1);
+        tr1.appendChild(th2);
+        tr1.appendChild(th3);
+        tr1.appendChild(th4);
+        
+        thead.appendChild(tr1);
+
+        table.appendChild(thead);
+
+        tbody = document.createElement('tbody');
+
+        tr2 = document.createElement('tr');
+
+        tdH1 = document.createElement('td');
+        tdH2 = document.createElement('td');
+        tdH3 = document.createElement('td');
+        tdH4 = document.createElement('td');
+        
+        textId = document.createTextNode('hongee');
+        textName = document.createTextNode('홍길동');
+        textGender = document.createTextNode('남자');
+        textCall = document.createTextNode('010-3333-5543');
+
+        tdH1.appendChild(textId);
+        tdH2.appendChild(textName);
+        tdH3.appendChild(textGender);
+        tdH4.appendChild(textCall);
+
+        tr2.appendChild(tdH1);
+        tr2.appendChild(tdH2);
+        tr2.appendChild(tdH3);
+        tr2.appendChild(tdH4);
+
+        tr3 = document.createElement('tr');
+
+        tdM1 = document.createElement('td');
+        tdM2 = document.createElement('td');
+        tdM3 = document.createElement('td');
+        tdM4 = document.createElement('td');
+        
+        textId = document.createTextNode('minsunie');
+        textName = document.createTextNode('김민순');
+        textGender = document.createTextNode('여자');
+        textCall = document.createTextNode('010-3333-5543');
+
+        tdM1.appendChild(textId);
+        tdM2.appendChild(textName);
+        tdM3.appendChild(textGender);
+        tdM4.appendChild(textCall);
+
+        tr3.appendChild(tdM1);
+        tr3.appendChild(tdM2);
+        tr3.appendChild(tdM3);
+        tr3.appendChild(tdM4);
+
+        tbody.appendChild(tr2);
+        tbody.appendChild(tr3);
+
+        table.appendChild(tbody);
+
+        document.getElementsByTagName('body')[0].appendChild(table);
+
      </script>
 </body>
 
