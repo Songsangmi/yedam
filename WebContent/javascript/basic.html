@@ -8,7 +8,7 @@
 </head>
 <body>
     <script>
-        var v1 = 'Hello, World';    //글로벌 변수(global variable)
+        var v1 = 'Hello, World';   
         v1 =10;
         v1 =true;
         console.log(typeof v1);
@@ -18,22 +18,16 @@
         
         v3=20;
 
-       //function 안에서 글로벌 변수 선언?
         function f1(){
-           // var v3 = 40;    //로컬 변수(local variable)
             v3=50;
             v4=90;
             console.log('v3:'+v3);
         }
-        //변수를 선언했어도 또 선언이 가능하다 
         f1();
         var v3 = 25;
-        //전역변수...?
         console.log('v3 outer:'+ v3);
         console.log('v4 outer:'+ v4);
 
-        //변수 선언하는 키워드 var(변수를 선언했어도 또 선언 가능), let(변수 중복 선언 불가능)
-        //변수 보는 법 console.log( 변수 );
 
         let num1=10;
 
@@ -42,8 +36,8 @@
         
         console.log('num2:' + num2);
 
-        const num3 = 40; //상수(한 번 선언하면 다른 변수 선언 불가능한 것 )
-        //num3='Hello';
+        const num3 = 40; 
+    
         console.log('num3:' + num3);
 
         const obj1={
@@ -55,19 +49,10 @@
         console.log(obj1.name);
         console.log(obj1.age);
 
-        //상수이기 때문에 에러남
-        //name의 주소 값을 가지고 있기 때문에 바꾸는 건 불가능
-        // obj1 ={
-        //     name: 'Hwang',
-        //     age: 25
-        // }
-
-        //null,배열...=object 널은 오브젝트 타입,,,,
+   
         let num4 =null;
         console.log(typeof num4);
-        
-        //배열 기호만 쓰면 가능 
-        //배열은 숫자,문자,true 형태로도 받을 수 있지만 보기에 불편하니까 하나만 담기 
+       
         let num5 = []; //new Array(); 
         console.log(typeof num5);
         num5[0] = 10;
@@ -78,8 +63,7 @@
             console.log('log: ' + num5[i]);
         }
 
-        // document.write(); 페이지에 내용이 보여지는 것 
-        // console.log(); 콘솔창에 보는 것 
+      
         document.write('<h1>Hello, World</h1>');
         const hong = {
             firstName: 'kildong',

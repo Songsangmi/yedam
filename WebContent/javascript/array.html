@@ -19,11 +19,10 @@
         const fruits =['apple', 'banana', 'cherry'];
         const newFruits = fruits.slice(0,2);
 
-        console.log(newFruits); //['apple' , 'banana'] 출력(원본 배열을 유지한 채 작업을 함) //splice와 차이를 알아둘 것.
+        console.log(newFruits); 
 
         const inputAry = [];
 
-        //세 번째 위치의 값을 지운다 
         inputAry[2] = null; 
         inputAry.splice();
 
@@ -41,13 +40,12 @@
         function removeAry(){
             //inputAry.shift();
             //pop: 아래에서부터 제거  shift:위에서부터 제거
-            //element의 값을 갖고 오도록
             //let iv = document.getElementsByTagName('input')[0].value;
             //let iv = document.getElementById('inputValue').value;
             let iv = document.querySelector('input[type="text"]').value;
             for(let i=0; i < inputAry.length; i++){
                 if(inputAry[i] == iv){
-                    inputAry.splice(i, 1) //삭제: 해당되어있는 값을 지우고 뒤에있는 값을 당겨옴
+                    inputAry.splice(i, 1) 
                     break;
                 }
             }
